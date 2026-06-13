@@ -1,0 +1,14 @@
+services:
+  ai-security:
+    image: ollama/ollama
+    container_name: ai-security
+    ports:
+      - "11434:11434"
+    restart: unless-stopped
+
+  remediation-engine:
+    image: nginx:latest
+    container_name: remediation-engine
+    ports:
+      - "8080:80"
+    restart: unless-stopped
